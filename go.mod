@@ -1,4 +1,4 @@
-module github.com/bonefabric/vrabber
+module github.com/vrabber/server
 
 go 1.23
 

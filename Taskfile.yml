@@ -3,4 +3,4 @@ version: '3'
 tasks:
   generate:
     cmds:
-      - protoc --proto_path=api/vrabber-protobuf/proto --go_out=gen --go-grpc_out=gen --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative agent/agent.proto client/client.proto
+      - protoc --proto_path=api/proto/proto --go_out=gen --go-grpc_out=gen --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative agent/agent.proto client/client.proto

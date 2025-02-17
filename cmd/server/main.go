@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/bonefabric/vrabber/gen/client"
+	pb "github.com/vrabber/server/gen/client"
 	"google.golang.org/grpc"
 )
 
