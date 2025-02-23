@@ -1,3 +1,5 @@
 .idea/
 gen/*/**
 !gen/.gitkeep
+proto/*/**
+!proto/.gitkeep
