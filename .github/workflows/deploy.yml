@@ -1,0 +1,15 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: change working dir
+        run: cd /var/www/vrabber/server
+      - name: checkout main
+        run: git switch main
+      - name: pull changes
+        run: git pull
