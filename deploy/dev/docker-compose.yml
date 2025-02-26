@@ -1,3 +1,5 @@
+name: dev-vrabber-server
+
 services:
   server:
     build:
