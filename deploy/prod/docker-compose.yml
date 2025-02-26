@@ -2,7 +2,7 @@ services:
   server:
     build:
       context: ../../.
-      dockerfile: ./deploy/prod/app/Dockerfile
+      dockerfile: deploy/prod/app/Dockerfile
     networks:
       - vrabber
     restart: unless-stopped
