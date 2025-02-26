@@ -11,3 +11,4 @@ services:
 
 networks:
   vrabber:
+    external: true
