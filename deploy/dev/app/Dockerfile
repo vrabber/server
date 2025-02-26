@@ -8,5 +8,4 @@ FROM alpine:latest
 
 WORKDIR /app
 COPY --from=builder /build/server .
-EXPOSE 8080
 CMD [ "./server" ]

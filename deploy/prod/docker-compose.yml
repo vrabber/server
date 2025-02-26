@@ -1,10 +1,8 @@
 services:
   server:
     build:
-      context: ../
-      dockerfile: ./deploy/app/Dockerfile
-    ports:
-      - "8080:8080"
+      context: ../../.
+      dockerfile: ./deploy/prod/app/Dockerfile
     networks:
       - vrabber
     restart: unless-stopped

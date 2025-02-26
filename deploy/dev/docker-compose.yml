@@ -1,0 +1,13 @@
+services:
+  server:
+    build:
+      context: ../../.
+      dockerfile: deploy/dev/app/Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - dev-vrabber
+    restart: unless-stopped
+
+networks:
+  dev-vrabber:

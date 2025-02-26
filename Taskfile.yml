@@ -4,3 +4,12 @@ tasks:
   generate:
     cmds:
       - protoc --proto_path=api/proto/proto --go_out=gen --go-grpc_out=gen --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative agent/agent.proto client/client.proto
+  run:
+    cmds:
+      - go run ./cmd/server/main.go
+  update:
+    cmds:
+      - git submodule update --remote --rebase --recursive
+  compose:
+    cmds:
+      - docker compose -f deploy/dev/docker-compose.yml {{.CLI_ARGS}}

@@ -15,4 +15,4 @@ jobs:
       - name: pull changes
         run: git pull
       - name: update containers
-        run: docker compose -f ./deploy/docker-compose.yml up -d --build
+        run: docker compose -f ./deploy/prod/docker-compose.yml up -d --build
