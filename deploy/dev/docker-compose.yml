@@ -1,15 +1,23 @@
-name: dev-vrabber-server
+name: server
 
 services:
+  air:
+    build:
+      context: ../..
+      dockerfile: deploy/dev/air/Dockerfile
+    ports:
+      - "${PORT}:8080"
+    volumes:
+      - ../../:/app
+      - ./tmp:/app/tmp 
+    profiles:
+      - dev
+
   server:
     build:
-      context: ../../.
-      dockerfile: deploy/dev/app/Dockerfile
+      context: ../..
+      dockerfile: deploy/prod/docker/Dockerfile
     ports:
-      - "8080:8080"
-    networks:
-      - dev-vrabber
-    restart: unless-stopped
-
-networks:
-  dev-vrabber:
+      - "${PORT}:8080"
+    profiles:
+      - prod 

@@ -1,1 +1,21 @@
+# IDE
 .idea/
+.vscode/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Build
+tmp/
+*.exe
+*.exe~
+
+# Test
+*.test
+*.out
+
+# Go specific
+*.log
+go.work

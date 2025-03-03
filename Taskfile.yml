@@ -13,3 +13,57 @@ tasks:
   compose:
     cmds:
       - docker compose -f deploy/dev/docker-compose.yml {{.CLI_ARGS}}
+
+  # Запуск с live-reload
+  dev:
+    desc: Запуск сервера в режиме разработки с live-reload
+    cmds:
+      - task: compose
+        vars:
+          CLI_ARGS: "--profile dev up -d"
+
+  # Запуск без live-reload
+  prod:
+    desc: Запуск сервера без live-reload
+    cmds:
+      - task: compose
+        vars:
+          CLI_ARGS: "--profile prod up -d"
+
+  # Остановка всех контейнеров
+  down:
+    desc: Остановка всех контейнеров
+    cmds:
+      - task: compose
+        vars:
+          CLI_ARGS: "down"
+
+  # Пересборка и запуск в режиме разработки
+  dev:rebuild:
+    desc: Пересборка и запуск сервера в режиме разработки
+    cmds:
+      - task: compose
+        vars:
+          CLI_ARGS: "--profile dev up --build"
+
+  # Пересборка и запуск без live-reload
+  prod:rebuild:
+    desc: Пересборка и запуск сервера без live-reload
+    cmds:
+      - task: compose
+        vars:
+          CLI_ARGS: "--profile prod up --build"
+
+  # Просмотр логов
+  logs:
+    desc: Просмотр логов сервера
+    cmds:
+      - task: compose
+        vars:
+          CLI_ARGS: "logs -f"
+
+  # Очистка Docker-окружения
+  clean:
+    desc: Очистка Docker-окружения (остановка контейнеров и удаление образов)
+    cmds:
+      - air compose -f deploy/dev/air-compose.yml down --rmi all
